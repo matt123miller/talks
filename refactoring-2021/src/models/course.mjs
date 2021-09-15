@@ -20,7 +20,7 @@ export default class Course {
         return;
       }
 
-      if (studentsCourse.grade > this.requiredGrade) {
+      if (studentsCourse.grade.letter > this.requiredGrade.letter) {
         return;
       }
     }
