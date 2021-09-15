@@ -1,3 +1,5 @@
+import { NullRequirement } from './courseRequirement';
+
 //  represents a class, has certain requirements to take it
 export const grades = ['A', 'B', 'C', 'D', 'E', 'F'];
 
@@ -8,12 +10,15 @@ export default class Course {
 
   constructor(name, requirements) {
     this.name = name;
-    this.requirements = requirements;
+    if (!requirements) {
+      this.requirements = new NullRequirement();
+    } else {
+      this.requirements = requirements;
+    }
   }
 
   enroll(student) {
-    // Does student meet requirements?
-    if (this.requirements && !this.requirements.validate(student)) {
+    if (!this.requirements.validate(student)) {
       return false;
     }
     // Were they already enrolled?

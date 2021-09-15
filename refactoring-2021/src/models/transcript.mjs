@@ -21,8 +21,7 @@ export default class Transcript {
       // students data
       const { course, grade } = courses[key];
 
-      // Are there requirements? Are they met?
-      if (course.requirements && !course.requirements.validate(this.student)) {
+      if (!course.requirements.validate(this.student)) {
         continue;
       }
 

@@ -1,3 +1,15 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable class-methods-use-this */
+/* eslint-disable no-useless-constructor */
+/* eslint-disable max-classes-per-file */
+export class NullRequirement {
+  constructor(yearGroup, previousCourse, attainedGrade) {}
+
+  validate(student) {
+    return true;
+  }
+}
+
 export default class CourseRequirement {
   constructor(yearGroup, previousCourse, attainedGrade) {
     this.yearGroup = yearGroup;
