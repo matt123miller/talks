@@ -20,21 +20,15 @@ test('Generate simple transcript', () => {
   expect(trans).toContain('History 1 - Achieved grade E');
 });
 
-test.skip('Student has altered data, does it revalidate?', () => {
+test('Student has altered data, does it revalidate?', () => {
   const student1 = new Student('Matt');
   const courseBio1 = new Course('Biology 1', null);
-  const courseBio2 = new Course('Biology 2', {
-    course: courseBio1,
-    grade: 'C',
-  });
-  const courseBio3 = new Course('Biology 3', {
-    course: courseBio2,
-    grade: 'B',
-  });
+  const courseBio2 = new Course('Biology 2', courseBio1, 'C');
+  const courseBio3 = new Course('Biology 3', courseBio2, 'B');
 
   courseBio1.enroll(student1);
   student1.addGrade(courseBio1, 'C');
-  // // student gets a C in bio 1, enough to qualify fo bio 2
+  // student gets a C in bio 1, enough to qualify fo bio 2
 
   courseBio2.enroll(student1);
   student1.addGrade(courseBio2, 'C');
