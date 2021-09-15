@@ -1,5 +1,6 @@
 import Student from './student.mjs';
 import Course from './course.mjs';
+import Grade from './grades.mjs';
 
 test('Can enroll a student on a course', () => {
   const student1 = new Student('Matt');
@@ -69,11 +70,11 @@ test('enforce grade requirements', () => {
   const student3 = new Student('Scott');
 
   const courseBio1 = new Course('Biology 1', null);
-  const courseBio2 = new Course('Biology 2', courseBio1, 'C');
+  const courseBio2 = new Course('Biology 2', courseBio1, new Grade(70));
 
-  student1.addGrade(courseBio1, 'B');
-  student2.addGrade(courseBio1, 'C');
-  student3.addGrade(courseBio1, 'D');
+  student1.addGrade(courseBio1, new Grade(82));
+  student2.addGrade(courseBio1, new Grade(74));
+  student3.addGrade(courseBio1, new Grade(58));
 
   courseBio2.enroll(student1);
 
