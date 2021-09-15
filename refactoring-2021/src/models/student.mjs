@@ -8,9 +8,11 @@ export default class User {
 
   courses = {};
 
-  constructor(name) {
+  constructor(name, yearGroup) {
     this.id = User._getNextId();
+
     this.name = name;
+    this.yearGroup = yearGroup;
   }
 
   addGrade(forCourse, withGrade) {
