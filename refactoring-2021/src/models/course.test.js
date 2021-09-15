@@ -1,6 +1,7 @@
 import Student from './student.mjs';
 import Course from './course.mjs';
 import Grade from './grades.mjs';
+import CourseRequirements from './courseRequirement.mjs';
 
 test('Can enroll a student on a course', () => {
   const student1 = new Student('Matt');
@@ -64,27 +65,42 @@ test('Courses with no requirements accept any student', () => {
   expect(courseBio1.students).toHaveProperty('length', 3);
 });
 
-test('enforce grade requirements', () => {
+test('enforce enroll requirements', () => {
   const student1 = new Student('Matt');
   const student2 = new Student('Charlotte');
   const student3 = new Student('Scott');
 
-  const courseBio1 = new Course('Biology 1', null);
-  const courseBio2 = new Course('Biology 2', courseBio1, new Grade(70));
+  const bio1 = new Course('Biology 1');
+  const bio2reqs = new CourseRequirements(null, bio1, new Grade(70)); // C
+  const bio2 = new Course('Biology 2', bio2reqs);
 
-  student1.addGrade(courseBio1, new Grade(82));
-  student2.addGrade(courseBio1, new Grade(74));
-  student3.addGrade(courseBio1, new Grade(58));
+  student1.addGrade(bio1, new Grade(82)); // B
+  student2.addGrade(bio1, new Grade(74)); // C
+  student3.addGrade(bio1, new Grade(58)); // D
+  bio2.enroll(student1);
 
-  courseBio2.enroll(student1);
+  expect(bio2.students).toHaveProperty('length', 1);
 
-  expect(courseBio2.students).toHaveProperty('length', 1);
+  bio2.enroll(student2);
 
-  courseBio2.enroll(student2);
+  expect(bio2.students).toHaveProperty('length', 2);
 
-  expect(courseBio2.students).toHaveProperty('length', 2);
-
-  courseBio2.enroll(student3);
+  bio2.enroll(student3);
   // student 3 doesn't have at least a C grade in the bio 1 course
-  expect(courseBio2.students).toHaveProperty('length', 2);
+  expect(bio2.students).toHaveProperty('length', 2);
+
+  const chem1reqs = new CourseRequirements(8);
+  const chem1 = new Course('Chemistry 1', chem1reqs);
+
+  chem1.enroll(student1);
+  expect(chem1.students).toHaveProperty('length', 0);
+
+  const student4 = new Student('Mollie', 8);
+  chem1.enroll(student4);
+  expect(chem1.students).toHaveProperty('length', 1);
+
+  chem1.enroll(student4);
+  chem1.enroll(student4);
+  chem1.enroll(student4);
+  expect(chem1.students).toHaveProperty('length', 1);
 });
