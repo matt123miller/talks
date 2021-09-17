@@ -18,6 +18,17 @@ export default class Transcript {
       if (courses.hasOwnProperty(key)) {
         const { course, grade } = courses[key];
 
+        if (course.requiredCourse || course.requiredGrade) {
+          const studentsCourse = courses[course.requiredCourse.name];
+          if (!studentsCourse) {
+            continue;
+          }
+
+          if (studentsCourse.grade > course.requiredGrade) {
+            continue;
+          }
+        }
+
         // Presumably student was allowed to take the course so lets make the report.
         results.push(`${course.name} - Achieved grade ${grade}`);
       }
