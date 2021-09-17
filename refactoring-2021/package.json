@@ -1,0 +1,25 @@
+{
+  "name": "refactoring-2021",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "test:watch": "node --experimental-vm-modules node_modules/.bin/jest --watch",
+    "start": "node src/server.js"
+  },
+  "type": "module",
+  "author": "matt123miller",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "isomorphic-fetch": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/jest": "^26.0.24",
+    "@types/node": "^16.7.13",
+    "faker": "^5.5.3",
+    "jest": "^27.0.5"
+  }
+}
