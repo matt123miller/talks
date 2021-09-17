@@ -4,25 +4,17 @@ export const grades = ['A', 'B', 'C', 'D', 'E', 'F'];
 export default class Course {
   students = [];
 
-  constructor(name, requiredCourse, requiredGrade) {
+  // Later add teacher
+
+  constructor(name, requirements) {
     this.name = name;
-    this.requiredCourse = requiredCourse;
-    this.requiredGrade = requiredGrade;
+    this.requirements = requirements;
   }
 
   enroll(student) {
     // Does student meet requirements?
-
-    // Are there even requirements for this course?
-    if (this.requiredCourse || this.requiredGrade) {
-      const studentsCourse = student.courses[this.requiredCourse.name];
-      if (!studentsCourse) {
-        return;
-      }
-
-      if (studentsCourse.grade.letter > this.requiredGrade.letter) {
-        return;
-      }
+    if (this.requirements && !this.requirements.validate(student)) {
+      return false;
     }
     // Were they already enrolled?
     const existingStudent = this.students.find((s) => s.id === student.id);

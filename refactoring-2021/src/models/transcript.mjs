@@ -15,23 +15,19 @@ export default class Transcript {
     const results = [];
 
     for (const key in courses) {
-      if (courses.hasOwnProperty(key)) {
-        const { course, grade } = courses[key];
-
-        if (course.requiredCourse || course.requiredGrade) {
-          const studentsCourse = courses[course.requiredCourse.name];
-          if (!studentsCourse) {
-            continue;
-          }
-
-          if (studentsCourse.grade > course.requiredGrade) {
-            continue;
-          }
-        }
-
-        // Presumably student was allowed to take the course so lets make the report.
-        results.push(`${course.name} - Achieved grade ${grade}`);
+      if (!courses.hasOwnProperty(key)) {
+        continue;
       }
+      // students data
+      const { course, grade } = courses[key];
+
+      // Are there requirements? Are they met?
+      if (course.requirements && !course.requirements.validate(this.student)) {
+        continue;
+      }
+
+      // Presumably student was allowed to take the course so lets add to the report.
+      results.push(`${course.name} - Achieved grade ${grade.letter}`);
     }
     return results.join('\n');
   }
