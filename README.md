@@ -18,4 +18,6 @@ An introduction I gave to my team about who I am, where I came from and what I d
 
 A talk I've given a few times, with variations. Most recently at PUB Networking in Ipswich.
 
-[Slides here](/talks/dnd-for-work)
+[Current slides here](/talks/dnd-for-work)
+
+A long time ago I gave this talk when working at [The Frameworks](https://www.theframeworks.com/) - [video can be found here](https://www.youtube.com/watch?v=CiIqa_xaCuU)
