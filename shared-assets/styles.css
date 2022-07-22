@@ -10,3 +10,7 @@
   pointer-events: none;
   font-size: 10px;
 }
+
+li {
+    margin-bottom: 2rem;
+}
