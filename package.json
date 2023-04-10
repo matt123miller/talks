@@ -2,8 +2,11 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "tailwind": "tailwindcss -i ./src/base.css -o ./dist/output.css --watch",
-    "serve": "serve"
+    "tw": "tailwindcss -i ./src/base.css -o ./dist/output.css",
+    "tw:watch": "tailwindcss -i ./src/base.css -o ./dist/output.css --watch",
+    "serve": "serve",
+    "predeploy": "rm -rf ./src/**/node_modules/",
+    "deploy": "npm run tw"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.18.2",
