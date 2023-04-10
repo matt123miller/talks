@@ -1,0 +1,91 @@
+---
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>{title}</title>
+    <link
+      href=" https://cdn.jsdelivr.net/npm/reveal.js@4.4.0/dist/reveal.css"
+      rel="stylesheet"
+    />
+    <link
+      href=" https://cdn.jsdelivr.net/npm/reveal.js@4.4.0/dist/reset.css"
+      rel="stylesheet"
+    />
+
+    <!-- Use the blood theme in combination with my dracula variables below -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.4.0/dist/theme/blood.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* The variables for my preferred dracula colour scheme */
+      :root {
+        --r-background-color: #282a36;
+        --r-main-font: Ubuntu, sans-serif;
+        --r-main-font-size: 40px;
+        --r-main-color: #f8f8f2;
+        --r-block-margin: 20px;
+        --r-heading-margin: 0 0 20px 0;
+        --r-heading-font: Ubuntu, sans-serif;
+        --r-heading-color: #f8f8f2;
+        --r-heading-line-height: 1.2;
+        --r-heading-letter-spacing: normal;
+        --r-heading-text-transform: uppercase;
+        --r-heading-text-shadow: 2px 2px 2px #282a36;
+        --r-heading-font-weight: normal;
+        --r-heading1-text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb,
+          0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1),
+          0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
+          0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
+          0 20px 20px rgba(0, 0, 0, 0.15);
+        --r-heading1-size: 3.77em;
+        --r-heading2-size: 2.11em;
+        --r-heading3-size: 1.55em;
+        --r-heading4-size: 1em;
+        --r-code-font: monospace;
+        --r-nav-control-color: #ff79c6;
+        --r-link-color: #8be9fd;
+        --r-link-color-dark: #8be9fd;
+        --r-link-color-hover: #ff79c6;
+        --r-selection-background-color: #44475a;
+        --r-selection-color: #f8f8f2;
+      }
+      li {
+        margin-bottom: 2rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <slot />
+      </div>
+    </div>
+    <!-- <script src="../scripts/revealjs/reveal.js"></script>
+    <script src="../scripts/revealjs/plugin/notes/notes.js"></script>
+    <script src="../scripts/revealjs/plugin/highlight/highlight.js"></script> -->
+    <script>
+      import Reveal from "reveal.js";
+      // import RevealNotes from "reveal.js/plugin/notes/notes.esm.js";
+      // import RevealHighlight from "reveal.js/plugin/highlight/highlight.esm.js";
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        // Learn about plugins: https://revealjs.com/plugins/
+        // plugins: [RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>

@@ -1,23 +1,55 @@
-# Talks
+# Astro Starter Kit: Basics
 
-## Refactoring Towards More Maintainable JavaScript
+```
+npm create astro@latest -- --template basics
+```
 
-[Poll at the beginning of the talk](https://admin.sli.do/event/iel2auad/polls)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
 
-[Code found here](https://github.com/matt123miller/talks/tree/refactoring-2021/refactoring-2021)
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-[![Link to my talk](http://img.youtube.com/vi/6sCv9Ypnebg/0.jpg)](https://youtu.be/6sCv9Ypnebg?t=165 "Refactoring Towards More Maintainable JavaScript")
+![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
 
-## Pebble Dev Day 2021
 
-An introduction I gave to my team about who I am, where I came from and what I do.
+## 🚀 Project Structure
 
-[Slides here](/talks/pebble-dev-day-2021)
+Inside of your Astro project, you'll see the following folders and files:
 
-## Dungeons and Dragons For Professional Growth
+```
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── components/
+│   │   └── Card.astro
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
 
-A talk I've given a few times, with variations. Most recently at PUB Networking in Ipswich.
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-[Current slides here](/talks/dnd-for-work)
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-A long time ago I gave this talk when working at [The Frameworks](https://www.theframeworks.com/) - [video can be found here](https://www.youtube.com/watch?v=CiIqa_xaCuU)
+Any static assets, like images, can be placed in the `public/` directory.
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                | Action                                           |
+| :--------------------- | :----------------------------------------------- |
+| `npm install`          | Installs dependencies                            |
+| `npm run dev`          | Starts local dev server at `localhost:3000`      |
+| `npm run build`        | Build your production site to `./dist/`          |
+| `npm run preview`      | Preview your build locally, before deploying     |
+| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
