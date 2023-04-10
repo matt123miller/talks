@@ -1,0 +1,275 @@
+---
+import Talk from "../../layouts/Talk.astro";
+import textHierarchy from "./assets/text-hierarchy.jpg";
+---
+
+<Talk title="Sensible Interface Design">
+  <section>
+    <h2>Sensible Interface Design</h2>
+    Boring. Simple. Reliable.
+
+    <!-- This is being recorded for my youtube channel as well,
+  if that's a problem then I won't -->
+  </section>
+  <section>
+    <h2>Topics</h2>
+    <ul>
+      <li>Design across the globe</li>
+      <li>User expectations</li>
+      <li>Information Architecture</li>
+      <li>Accessibility</li>
+      <li>Native elements</li>
+      <li>User Experience (UX)</li>
+      <!-- UX is kind of a through line of everything -->
+    </ul>
+  </section>
+  <!-- Design across the globe -->
+  <section>
+    <section>
+      <h2>Design across the globe</h2>
+      <!--
+      Why are we talking about this?
+      Design is regional, what you may regard as good design is bad design elsewhere
+     -->
+    </section>
+
+    <section>
+      <ul>
+        <li>
+          <a href="https://www.apple.com/"> Apple</a>
+        </li>
+        <li>
+          <a href="https://stripe.com/gb"> Stripe</a>
+        </li>
+        <li>
+          <a href="https://www.gov.uk/"> gov.uk</a>
+        </li>
+      </ul>
+      <!-- 
+        Regarded as the leaders of design
+      -->
+    </section>
+    <section>
+      <ul>
+        <li>
+          <a href="https://www.lingscars.com/">Lings Cars</a> https://www.lingscars.com/
+        </li>
+        <li>Japanese Sites</li>
+        <li>
+          <a
+            href="https://www.my.gov.sa/wps/portal/snp/eParticipation/partnershipwithprivatesector"
+            >RTL languages</a
+          >
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h3>"Western" vs Japanese</h3>
+      <h3>Starbucks</h3>
+      <ul>
+        <li>
+          <a href="https://www.starbucks.co.uk/">UK</a>
+        </li>
+        <li>
+          <a href="https://www.starbucks.co.jp/">Japan</a>
+        </li>
+        <li>
+          <a
+            href="https://www.infocubic.co.jp/en/blog/website-design/how-japanese-website-design-differs-from-the-west/"
+            >More examples</a
+          >
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h3>Interfaces are for communication</h3>
+      Remember who you're communicating with
+    </section>
+  </section>
+  <!-- User expectations -->
+  <section>
+    <section>
+      <h2>User expectations</h2>
+    </section>
+    <section>
+      <h3>Meet your users where they are</h3>
+    </section>
+    <section>
+      <h3>Be consistent</h3>
+    </section>
+    <section>
+      <h3>
+        Every modal should look the same, every button, every drop down, every
+        text field
+      </h3>
+    </section>
+  </section>
+  <!-- Information Architecture -->
+  <section>
+    <section>
+      <h2>Information Architecture</h2>
+    </section>
+    <section>
+      <p>The order and presentation of information matters.</p>
+      <p>Don't believe me?</p>
+    </section>
+    <section>
+      <img
+        src={textHierarchy}
+        alt="An image showing 4 different pieces of text that each describe the expected order to be read in. It is likely you will read them in the order they suggest without even meaning to."
+        srcset=""
+      />
+    </section>
+    <section>
+      <p>This is cognitive psychology. Brains and shit.</p>
+      <ul>
+        <!-- Source: https://www.uxbooth.com/articles/complete-beginners-guide-to-information-architecture/ -->
+        <li>Cognitive Load</li>
+        <!-- 
+                            the amount of information that a person can process at any given time. 
+                            Keeping in mind the user’s cognitive load helps prevent 
+                            information architects from inadvertently overloading a user
+                            with too much information all at once. 
+                        -->
+        <li>Mental Models</li>
+        <!-- 
+                            the assumptions people carry in their minds before interacting with 
+                            a website or application. Information is easier to discover when it 
+                            is in a place that matches the user’s mental model of where it should be.
+                        -->
+        <li>Decision Making</li>
+        <!-- 
+                            may not sound like psychology, but it is! It’s a cognitive process 
+                            that allows us to make a choice or select an option. Information architecture 
+                            can help us make decisions by providing certain information at key moments.
+                        -->
+      </ul>
+    </section>
+    <section>
+      <ul>
+        <li>Headings</li>
+        <li>Labels</li>
+        <!-- 
+                            Inputs should have labels. The visual relationship between label and input
+                            should be consistent.
+                        -->
+        <li>Size</li>
+        <!-- Newspaper headlines, advertisements -->
+        <li>Placement</li>
+        <!-- 
+              Look at print adverts for examples, advertising is all about
+              manipulating psychology 
+            -->
+      </ul>
+    </section>
+  </section>
+  <!-- Accessibility -->
+  <section>
+    <section>
+      <h2>Accessibility</h2>
+      Everyone benefits from accessible design
+      <!--
+            Oh but we don't have disabled users!
+            Yes you do 
+          -->
+    </section>
+    <section>
+      <!-- The stats -->
+      <p>UK has 68.5 million people</p>
+      <p>How many are have some form of diability?</p>
+    </section>
+    <section>
+      <h3>14.6 million disabled people in the UK.</h3>
+
+      <ul>
+        <li>9% of children are disabled</li>
+        <li>21% of working age adults are disabled</li>
+        <li>42% of pension age adults are disabled</li>
+      </ul>
+      <p>
+        <a href="https://www.scope.org.uk/media/disability-facts-figures/"
+          >Source: Scope</a
+        >
+      </p>
+    </section>
+    <section>
+      <ul>
+        <li>Colour contrast</li>
+        <li>Text legibility</li>
+        <li>Inputs are clear and easy to interact with</li>
+        <!-- 
+              As an example of what not to do visit r/badUIbattles
+              https://www.reddit.com/r/badUIbattles/
+             -->
+        <li>Screen reader support</li>
+        <li>Keyboard navigable</li>
+        <!-- 
+              As devs we use a lot of keyboard shortcuts because we like to do more with less.
+              Now if moving in general is difficult keyboard shortcuts are now a lifeline.
+            -->
+        <li>One hand usage, especially for mobile</li>
+      </ul>
+    </section>
+    <section>So those buttons...</section>
+    <section>
+      <p>Try this at home.</p>
+      <ul>
+        <li>JAWS for windows</li>
+        <li>Accessibility mode on your phone</li>
+        <!-- iOS is particularly good -->
+        <li>
+          <a href="https://www.sldread.org/dyslexia-simulator/"
+            >Dyslexia simulation</a
+          >
+        </li>
+        <li>Add physical limitations</li>
+        <!-- 
+              e.g. 
+              - use only 1 hand for an hour
+              - don't turn your neck, only your torso
+             -->
+      </ul>
+    </section>
+  </section>
+  <!-- Native elements -->
+  <section>
+    <section>
+      <h2>Native Elements</h2>
+      <p>Learn to love the platform</p>
+      <!-- 
+            This section is biased towards web development
+            But Jame's recent expert sessions about "proper QT" can be substituted here.
+          -->
+    </section>
+    <section>
+      <h3>A rant</h3>
+      <!-- 
+            A surprising number of web devs don't know proper HTML
+            These are the building blocks!
+            So many different types of inputs out there
+            But lets use a text input for everything and pile JS on top to reimplement everything
+
+            Drop downs? Use <select> 
+            Disclosure? <details> with <summary> 
+            Reimplementing things on top of divs
+            Wrong tool for the job
+
+            Accessibility
+            Performance
+            Standardisation
+            Keyboard usage
+            Screen reader
+            All goes out the window
+           -->
+    </section>
+  </section>
+
+  <section>
+    <h2>Discussion and Questions</h2>
+    <!-- 
+          What ideas does this spark for your work?
+          What can we improve?
+          Avenues for research?
+         -->
+  </section>
+</Talk>
