@@ -1,0 +1,116 @@
+---
+import Talk from "../../layouts/Talk.astro";
+
+import readyForSmells from "./assets/ready-for-smells.png";
+import vscode from "./assets/vscode.png";
+---
+
+<Talk title="Refactoring Towards More Maintainable JavaScript">
+  <section>
+    <div>This is a talk I gave in 2021 at a local meetup.</div>
+    <div>
+      There is a recording which you can <a
+        href="https://www.youtube.com/watch?v=6sCv9Ypnebg&t=166s">watch here</a
+      >.
+    </div>
+    <div class="mt-8">
+      What follows is a recreation of the slides shown in that talk, though most
+      of the talk was live coding.
+    </div>
+  </section>
+  <section>
+    <h3 class="text-5xl text-shadow">
+      Refactoring Towards More Maintainble JavaScript
+    </h3>
+    <div class="mt-16">
+      Matt Miller (he/him) <br />
+      <a href="http://m11r.dev">www.m11r.dev</a>
+    </div>
+  </section>
+  <section>
+    <h3>What this talk <span class="underline">is not</span></h3>
+    <ul>
+      <li>A definitive guide on maintainable JS</li>
+      <li>Dogma</li>
+      <li>SOLID - kind of</li>
+    </ul>
+  </section>
+  <section>
+    <h3>What this talk is</h3>
+    <ul>
+      <li>A prompt and inspiration</li>
+      <li>A guided summary of what I've been learning</li>
+      <li>A reminder to look outside the JS community</li>
+      <li>A discussion about practices</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Why should you listen to me?</h3>
+    <div>You don't have to. I'm not an expert.</div>
+    <div>
+      Refactoring concepts have names, you can learn formal rules for this
+      stuff.
+    </div>
+  </section>
+  <section>
+    <h3>What is refactoring?</h3>
+    <div class="italic mb-4">
+      <span class="not-italic text-fuchsia-500">noun:</span> a change made to the
+      internal structure of software to make it easier to understand and cheaper
+      to modify without changing its observable behavior.
+    </div>
+    <div class="italic">
+      <span class="not-italic text-sky-500">verb:</span> to restructure software
+      by applying a series of refactorings without changing its observable behavior.
+    </div>
+  </section>
+  <section>
+    <h3>Key Quotes</h3>
+    <ul>
+      <li>Is the code open? Can I add functionality by only adding lines.</li>
+      <li>Make change easy, then make the easy change.</li>
+      <li>Follow the smell closest to the code you're editing.</li>
+      <li>Duplication is cheaper than the wrong abstraction.</li>
+      <li>Positive design pressure.</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Lets go!</h3>
+    <div class="flex flex-column gap-2 justify-between">
+      <div>
+        <img src={vscode} class="object-fit" />
+      </div>
+      <div>
+        <img src={readyForSmells} class="object-fit" />
+      </div>
+    </div>
+  </section>
+  <section>
+    <h3>Change request 1</h3>
+    <div class="text-left mb-4">
+      Transcript should revalidate course requirements to stop cheaters.
+    </div>
+    <div class="text-left mb-4">
+      There's a history of students sneaking in to doctor their grades so we
+      need to revalidate the data when generating the transcript.
+    </div>
+    <div class="text-left mb-4">
+      Whenever we generate a transcript we need to ask “Does the student meet
+      the requirements of each course?”
+    </div>
+  </section>
+  <section>
+    <h3>Change request 2</h3>
+    <div class="text-left mb-4">Grades having a numeric score backing them</div>
+    <div class="text-left mb-4">
+      We don't know what we're going to do with this new numerical score data
+      yet but we just want it to be there.
+    </div>
+    <div class="text-left mb-4">
+      Courses now have a student year requirement.
+    </div>
+  </section>
+  <section>
+    <h3>Questions and discussion</h3>
+  </section>
+</Talk>
