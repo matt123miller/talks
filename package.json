@@ -5,8 +5,8 @@
     "tw": "tailwindcss -i ./src/base.css -o ./dist/output.css",
     "tw:watch": "tailwindcss -i ./src/base.css -o ./dist/output.css --watch",
     "serve": "serve",
-    "predeploy": "rm -rf ./src/**/node_modules/",
-    "deploy": "npm run tw"
+    "predeploy": "rm -rf dist ./src/**/node_modules/",
+    "deploy": "npm run tw && cp -r src/* dist/"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.18.2",
